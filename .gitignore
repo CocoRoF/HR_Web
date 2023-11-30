@@ -1,0 +1,17 @@
+mariadb/.env
+mariadb/my.cnf
+mariadb/volume/
+mariadb/sql/init.sql
+
+backend/web/.env
+backend/web/config
+backend/web/gunicorn_config.py
+
+backend/nginx/default.conf
+backend/nginx/nginx.conf
+
+frontend/nginx/default.conf
+frontend/web-front/node_modules
+
+.docker-compose.yml
+.DS_Store

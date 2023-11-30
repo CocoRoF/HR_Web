@@ -1,0 +1,25 @@
+.board__inner {
+    display: flex;
+    justify-content: center;
+    height: 90.5vh;
+    width: 100%;
+
+    .large__container {
+        position: fixed;
+        top: 55.8vh;
+        width: 60%;
+        height: 0;
+        padding-bottom: 60%;
+        display: flex;
+
+        .small__container {
+            position: absolute;
+            width: 30%;
+            height: 0;
+            padding-bottom: 20%;
+            background-color: bisque;
+            text-align: center;
+
+        }
+    }
+}
