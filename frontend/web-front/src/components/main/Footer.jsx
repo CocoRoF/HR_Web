@@ -1,6 +1,6 @@
 import React from "react";
-
 import { footerText } from "@/constants/layout";
+import FooterUserInfo from '@/components/main/Footer_Userinfo';
 
 const Footer = () => {
     return (
@@ -8,10 +8,7 @@ const Footer = () => {
         <div className="footer__inner">
             <div className="footer__info">
                 <div className="left">
-                    <div className="title">
-                        <a href="#">sign up</a>
-                    </div>
-                    <p className="left__text">회원가입을 하시면 모든 기능을 이용하실 수 있습니다.</p>
+                    <FooterUserInfo />
                 </div>
                 <div className="right">
                     <h3>Other Site</h3>

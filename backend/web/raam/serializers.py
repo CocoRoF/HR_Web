@@ -1,12 +1,8 @@
 from rest_framework import serializers
-from .models import ResponseModel, TrainingData
+from .models import BasicResponseModel
 
-class FineTunedModelSerializer(serializers.ModelSerializer):
+class BasicResponseModelSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ResponseModel
-        fields = ['id', 'model_name', 'base_model']
+        model = BasicResponseModel
+        fields = ['model', 'inputText']
 
-class TrainingDataSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = TrainingData
-        fields = ['id', 'fine_tuned_model', 'prompt', 'completion', 'is_fine_tuned', 'will_be_fine_tuned']

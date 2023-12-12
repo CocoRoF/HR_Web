@@ -4,10 +4,11 @@ $total-width: ($num-port * 700);
 #port {
     width: 100%;
     margin-top: 30vh;
-    // overflow: hidden;
+    
 }
 .port__inner {
     padding: 16px;
+    user-select: none;
 
     .port__title {
         width: 100%;

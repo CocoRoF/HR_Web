@@ -1,5 +1,4 @@
 import React from "react";
-
 import { contactText } from "@/constants/layout";
 
 const Contact = () => {
@@ -16,7 +15,6 @@ const Contact = () => {
                 <div className="text">
                     {contactText.map((contact, index) => (
                         <div key={index}>
-                            {/* <a href={contact.link} target="_blank" rel="noopener noreferrer">{contact.title}</a> */}
                             <a>{contact.title}</a>
                         </div>
                     ))}

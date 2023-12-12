@@ -1,0 +1,31 @@
+.default__banner {
+    padding-left: 5vh;
+    margin-top: 20vh;
+    position: absolute;
+    right: 3%;
+    user-select: none;
+
+    .deafult__banner__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+            font-size: 2vh;
+            font-weight: 800;
+
+        }
+
+        .default__banner__image {
+            width: 52vh;
+            height: 13vh;
+            overflow: hidden;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+    }
+}

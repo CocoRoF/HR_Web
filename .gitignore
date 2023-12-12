@@ -6,6 +6,8 @@ mariadb/sql/init.sql
 backend/web/.env
 backend/web/config
 backend/web/gunicorn_config.py
+backend/web/nlp_model/Openai_API_Key.txt
+backend/web/nlp_model/utils/__pycache__
 
 backend/nginx/default.conf
 backend/nginx/nginx.conf

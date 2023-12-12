@@ -1,6 +1,9 @@
+"use client";
+
 import { boardContent } from "@/constants/application_board";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
 
 export class DivSquare {
     constructor(width, height, numDivs, className = 'default__small__container') {
@@ -62,7 +65,7 @@ export class DivSquare {
                             </div>
                             <div className="extend__board__footer">
                                 <a className="extend__board__period">{`period: ${boardContent.content[i].exBoard_Period}`}</a>
-                                <a href={boardContent.content[i].link} className="move__content">move</a>
+                                <Link href={boardContent.content[i].link} className="move__content">move</Link>
                             </div>
                         </div>
                     </div>
@@ -106,7 +109,7 @@ export class DivSquare {
                         </div>
                         <div className="default__link">
                             <a onClick={() => this.isExtend(i)} style={{cursor: 'pointer'}}>View</a>
-                            <a href={boardContent.content[i].link} target="_blank">Move</a>
+                            <Link href={boardContent.content[i].link}>Move</Link>
                         </div>
                     </div>
                 </div>

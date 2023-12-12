@@ -1,8 +1,10 @@
 #footer {
     font-family: var(--mainKor-font);
+    
 }
 .footer__inner {
     padding: 16px;
+    user-select: none;
 
     .footer__text {
         font-size: 12px;

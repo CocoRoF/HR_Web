@@ -2,6 +2,7 @@ $num-site: 5;
 
 .site__inner {
     padding: 16px;
+    user-select: none;
 
     .site__title  {
         position: sticky;

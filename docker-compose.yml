@@ -22,7 +22,7 @@ services:
     container_name: nginx-back
     build: ./backend/nginx/.
     volumes:
-      - static_volume:/code/staticfiles/ # <-- bind the static volume
+      - static_volume:/code/staticfiles/ 
     ports:
       - "8080:80"
     depends_on:

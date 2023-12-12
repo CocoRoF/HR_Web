@@ -1,0 +1,123 @@
+.raam__inner {
+    height: 80vh;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .raam__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 35%;
+        margin-bottom: 2vh;
+    }
+
+    .raam__main {
+        position: relative;
+        width: 35%;
+        height: 42vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .model__custom__select {
+            margin-bottom: 1%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            .module__select {
+                width: 95%;
+            }
+
+            img {
+                width: 25px;
+                height: 25px;
+                margin-left: 5px;
+            }
+
+            .arrow_box {
+                z-index: 100;
+                display: none;
+                position: absolute;
+                width: 89%;
+                padding: 8px;
+                left: 0;
+                -webkit-border-radius: 8px;
+                -moz-border-radius: 8px;
+                border-radius: 8px;
+                background: #333;
+                color: #fff;
+                font-size: 14px;
+              }
+              
+              .arrow_box:after {
+                z-index: 100;
+                position: absolute;
+                bottom: 0%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                margin-left: -10px;
+                border: solid transparent;
+                border-color: rgba(51, 51, 51, 0);
+                border-bottom-color: #333;
+                border-width: 10px;
+                pointer-events: none;
+                content: ' ';
+              }
+              
+              img:hover + p.arrow_box {
+                display: block;
+              }
+        }
+
+        .model__input {
+            position: relative;
+
+            textarea {
+                width: 100%;
+                height: 30vh;
+                font-size: 1.8vh;
+            }
+
+            textarea::placeholder {
+                font-size: 2.5vh;
+                text-align: center;
+            }
+        }
+
+        .model__submit{
+            width: 100%;
+            height: 10%;
+
+            button {
+                width: 100%;
+                border: 0;
+                background-color: antiquewhite;
+                font-size: 2.5vh;
+                font-weight: 800;
+                padding-top: 0.5vh;
+                padding-bottom: 0.5vh;
+                transition: all 0.5s;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: rgba(241, 196, 137, 0.75);
+            }
+        }
+    }
+
+    .raam__result {
+        margin-top: 3vh;
+        width: 35%;
+        text-align: center;
+
+        .common__loading__text {
+            margin-bottom: 1.5vh;
+        }
+    }
+
+}

@@ -22,6 +22,7 @@
         white-space: nowrap;
         text-indent: 0vw;
         letter-spacing: 0vw;
+        user-select: none;
 
         @media (max-width: 800px){ 
             display: none;

@@ -13,8 +13,9 @@ COPY requirements.txt ./
 RUN python3 -m pip install --upgrade pip setuptools
 RUN pip install -r requirements.txt
 
-# 나머지 프로젝트 파일 복사
+# 나머지 프로젝트 파일 복사 및 환경변수 추가
 COPY . ./
+ENV PYTHONPATH="/code/web/nlp_model:${PYTHONPATH}"
 
 # 사용자 생성 및 소유권 설정
 RUN useradd -M -s /bin/false cocorof || true

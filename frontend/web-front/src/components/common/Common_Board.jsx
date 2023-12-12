@@ -1,3 +1,4 @@
+"use client";
 import React, { Component } from 'react';
 import { DivSquare } from './div_square';
 import { boardContent } from "@/constants/application_board";
@@ -106,14 +107,14 @@ class Board extends Component {
         };
 
         return (
-            <board id="cardboard" role="cardboard">
+            <section id="cardboard" role="cardboard">
                 <div className='default__board__inner'>
                     <div ref={this.containerRef} style={containerStyle} className='default__large__container'>
                         {renderedDivs}
                     </div>
                 </div>
                 {extendState && extendedBoard[extendIndex]}
-            </board>
+            </section>
         );
     }
 }

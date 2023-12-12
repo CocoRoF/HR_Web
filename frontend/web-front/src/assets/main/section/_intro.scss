@@ -1,5 +1,6 @@
 #intro {
     height: 100vh;
+    
 }
 .intro__inner {
     width: 100%;
@@ -9,6 +10,7 @@
     justify-content: flex-end;
     flex-direction: column;
     padding: 16px;
+    user-select: none;
 
     @media (max-width: 800px){
         justify-content: center;

@@ -2,16 +2,23 @@
     font-family: var(--mainKor-font);
 }
 .default__footer__inner {
-    padding: 16px;
+    padding: 1vh;
     position: fixed;
-    left: 0%;
+    right: 0%;
     bottom: 0%;
-    width: 100%;
-    text-align: center;
+    width: 11.5%;
 
     .default__footer__right {
         text-align: center;
         text-transform: uppercase;
-        font-size: 12px;
+        font-size: 1.2vh;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+
+        .default__footer__reference {
+            display: flex;
+            justify-content: space-evenly;
+        }
     }
 }

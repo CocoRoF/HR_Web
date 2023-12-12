@@ -27,27 +27,27 @@ export const headerNav = [
 export const headerMenu = [
     {
         title: "blog",
-        url: "/(menu)/blog"
+        url: "/blog"
     },
     {
         title: "Paper",
-        url: "/(menu)/paper"
+        url: "/paper"
     },
     {
         title: "Project",
-        url: "/(menu)/project"
+        url: "/project"
     },
     {
         title: "Application",
-        url: "/(menu)/application"
+        url: "/application"
     },
     {
         title: "Award",
-        url: "/(menu)/award"
+        url: "/award"
     },
     {
         title: "Photo",
-        url: "/(menu)/photo"
+        url: "/photo"
     },
 ];
 

@@ -1,5 +1,8 @@
 #header {
-    @include position-fixed;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
     z-index: 10000;
 }
 
@@ -14,11 +17,51 @@
         text-align: center;
         text-transform: uppercase;
         line-height: 1;
+        margin-right: 4vh;
 
         em {
             display: block;
             font-size: 10px;
             color: var(--black200);
+        }
+    }
+
+    .header__info {
+        display: flex;
+
+        .header__user {
+            position: relative;
+            display: flex;
+
+            .user__info {
+                text-align: center;
+                font-size: 1.6vh;
+                font-weight: 500;
+                line-height: normal;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .user__logout {
+                position: relative;
+                left: 20%;
+                align-self: center;
+                font-size: 2vh;
+                cursor: pointer;
+
+            }
+
+            .user__register {
+                font-size: 2vh;
+                align-self: center;
+            }
+
+            .user__login {
+                position: relative;
+                left: 20%;
+                font-size: 2vh;
+                align-self: center;
+            }
         }
     }
 

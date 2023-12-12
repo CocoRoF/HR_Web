@@ -1,35 +1,31 @@
-import React, {useState} from "react";
+"use client";
+import React, { useState } from "react";
+import Link from 'next/link'
 import { headerMenu } from "@/constants/layout";
 import Dropdown from "@/components/main/Dropdown";
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
-
+import UserInfo from "@/components/default/Default_Userinfo";
 
 const Header = () => {
     const [view, setView] = useState(false);
-    const logoMouseOver = () => {
-        setView(true);
-    };
-    const logoMouseOut = () => {
-        setView(false);
-    };
+    const logoMouseOver = () => {setView(true)};
+    const logoMouseOut = () => {setView(false)};
 
     const [menuHovering, setMenuHovering] = useState(false);
-    const menuMouseOver = () => {
-        setMenuHovering(true);
-      };
-    const menuMouseOut = () => {
-        setMenuHovering(false);
-      };
-    const router = useRouter(); 
+    const menuMouseOver = () => {setMenuHovering(true)};
+    const menuMouseOut = () => {setMenuHovering(false)};
 
     return (
-        <header id="header" role="heading">
+        <header id="main__header" role="heading">
             <div className="header__inner" onMouseLeave={logoMouseOut}>
-                <div className="header__logo" onMouseEnter={logoMouseOver}>
-                    <ul>
-                        <Link href="/">HARYEOM JANG<em>Home</em></Link>
-                    </ul>
+                <div className="header__info">
+                    <div className="header__logo" onMouseEnter={logoMouseOver}>
+                        <ul>
+                            <Link href="/">HARYEOM JANG<em>Home</em></Link>
+                        </ul>
+                    </div>
+                    <div className="header__user">
+                        <UserInfo />
+                    </div>
                 </div>
                 <div onMouseEnter={logoMouseOut}></div>
                 <nav className={`header__menu ${menuHovering ? "hovering" : ""}`} role="navigation" aria-label="메인 메뉴">

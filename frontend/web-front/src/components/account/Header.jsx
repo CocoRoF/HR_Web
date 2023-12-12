@@ -1,21 +1,20 @@
-import React, {useState} from "react";
+"use client";
+
+import React, { useState } from "react";
+import Link from 'next/link'
 import { headerMenu } from "@/constants/layout";
 
 const Header = () => {
     const [menuHovering, setMenuHovering] = useState(false);
-    const menuMouseOver = () => {
-        setMenuHovering(true);
-      };
-    const menuMouseOut = () => {
-        setMenuHovering(false);
-      };
+    const menuMouseOver = () => {setMenuHovering(true);};
+    const menuMouseOut = () => {setMenuHovering(false);};
 
     return (
         <header id="header" role="heading">
             <div className="header__inner">
                 <div className="header__logo">
                     <ul>
-                        <a href="/">HARYEOM JANG<em>Home</em></a>
+                        <Link href="/">HARYEOM JANG<em>Home</em></Link>
                     </ul>
                 </div>
                 <nav className={`header__menu ${menuHovering ? "hovering" : ""}`} role="navigation" aria-label="메인 메뉴">

@@ -1,28 +1,20 @@
-"use client";
-
 // import Components
-import React, { useEffect } from "react";
-import Header from "@/components/common/Common_Header";
-import Footer from "@/components/common/Common_Footer"
-import Skip from "@/components/common/Common_Skip";
+import Header from "@/components/default/Default_Header";
+import Footer from "@/components/default/Default_Footer"
+import Skip from "@/components/default/Default_Skip";
 import App from "@/components/common/App";
-// import lenis from "@/utils/lenis";
-// import link from "@/utils/link";
+import { AuthProvider } from "@/context/AuthContext";
 
 export default function Project() {
-// import Effect
-    useEffect(() => {
-    }, []);
-    
     // html structure
     return (
-        <>
+        <AuthProvider>
             <Skip />
             <Header />
             <main id="main" role="main">
                 <App />
             </main>
             <Footer />
-        </>
+        </AuthProvider>
     );
 }

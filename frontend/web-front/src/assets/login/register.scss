@@ -1,0 +1,66 @@
+.login__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 27vh;
+
+    h1 {
+        font-size: 4vh;
+        font-weight: 600;
+    }
+    
+    .login__input {
+        display: flex;
+        flex-direction: column;
+        width: 35vh;
+
+        label {
+            font-size: 2vh;
+            font-weight: 500;
+            margin-top: 3vh;
+        }
+
+        input {
+            font-size: 2vh;
+            font-weight: 500;
+            user-select: auto;
+        }
+
+        .login__button {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column-reverse;
+            margin-top: 6vh;
+
+            a {
+                text-align: end;
+                margin-top: 3vh;
+                font-size: 2vh;
+                transition: all 0.5s;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            button {
+                border: 0;
+                background-color: antiquewhite;
+                height: 5vh;
+                transition: all 0.5s;
+                cursor: pointer;
+
+                p {
+                    font-size: 2.4vh;
+                    font-weight: 500;
+                    margin: 1vh;
+                }
+            }
+
+            button:hover {
+                background-color: rgba(241, 196, 137, 0.75);
+            }
+        }
+    }
+}
