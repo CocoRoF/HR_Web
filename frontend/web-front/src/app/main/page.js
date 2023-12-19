@@ -1,5 +1,4 @@
 "use client";
-import "@/assets/main/style.scss"
 
 // import components
 import React, { useEffect } from "react";
@@ -13,7 +12,6 @@ import Contact from "@/components/main/Contact";
 import Skip from "@/components/main/Skip";
 import lenis from "@/utils/lenis";
 import link from "@/utils/link";
-import { AuthProvider } from "@/context/AuthContext";
 
 export default function Main() {
 // import Effect
@@ -24,7 +22,7 @@ export default function Main() {
     
     // html structure
     return (
-        <AuthProvider>
+        <>
             <Skip />
             <Header />
             <main id="main" role="main">
@@ -35,6 +33,6 @@ export default function Main() {
                 <Contact />
             </main>
             <Footer />
-        </AuthProvider>
+        </>
     );
 }

@@ -47,7 +47,7 @@ services:
     restart: always
   
   web-front:
-    image: node:latest
+    image: node:21.2.0
     volumes:
       - ./frontend/web-front:/home/app/frontend
     ports:

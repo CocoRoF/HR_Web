@@ -6,18 +6,16 @@ export const metadata = {
     keywords: ["AI", "Deep Learning", "Machine Learning", "Python", "Django", "React"],
 }
 
-import { AuthProvider } from "@/context/AuthContext";
+// import { AuthProvider } from "@/context/AuthContext";
 import Footer from "@/components/default/Default_Footer"
 import Skip from "@/components/default/Default_Skip";
 
 export default function DetailLayout({ children }) {
     return (
         <>
-            <AuthProvider>
-                <Skip />
-                {children}
-                <Footer />
-            </AuthProvider>
+            <Skip />
+            {children}
+            <Footer />
         </>
     )
 }

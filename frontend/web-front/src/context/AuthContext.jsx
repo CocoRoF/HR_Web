@@ -13,7 +13,6 @@ import { jwtDecode } from "jwt-decode";
 import dayjs from "dayjs";
 
 const AuthContext = createContext();
-
 export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
@@ -41,6 +40,7 @@ export const AuthProvider = ({ children }) => {
             setAuthTokens(data);
             setUser(jwtDecode(data.access));
             setCookie('authTokens', data, {path: '/', expires: new Date(Date.now() + (30 * 60 * 1000))});
+            console.log(cookies.authTokens)
             router.push("/main");
         } 
         else {
@@ -79,24 +79,30 @@ export const AuthProvider = ({ children }) => {
         setAuthTokens(null);
         setUser(null);
         removeCookie('authTokens');
+        console.log('clear user info')
     };
 
     const refreshToken = () => {
         if (authTokens) {
+            console.log(authTokens)
+            console.log("axios method start")
             const axiosInstance = axios.create({
                 baseURL: "http://localhost:8080/api/account",
-                headers: { Authorization: axiosHeader}
+                headers: {Authorization: `Bearer ${authTokens.access}`}
             });
 
             axiosInstance.interceptors.request.use(async req => {
                 const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
     
                 if (!isExpired) {
+                    console.log("use exist token")
                     return req;
                 }
     
                 else {
+                    console.log("use refresh token")
                     const response = await axios.post("http://localhost:8080/api/account/token/refresh/", {refresh: authTokens.refresh});
+                    console.log(response)
                     setAuthTokens(response.data);
                     setUser(jwtDecode(response.data.access));
                     setCookie('authTokens', response.data, {path: '/', expires: new Date(Date.now() + (30 * 60 * 1000))});

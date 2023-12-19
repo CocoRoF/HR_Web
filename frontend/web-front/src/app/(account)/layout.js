@@ -8,16 +8,14 @@ export const metadata = {
 
 import Footer from "@/components/default/Default_Footer"
 import Skip from "@/components/default/Default_Skip";
-import { AuthProvider } from "@/context/AuthContext"
+// import { AuthProvider } from "@/context/AuthContext"
 
 export default function AccountLayout({ children }) {
     return (
         <>
-            <AuthProvider>
-                <Skip />
-                {children}
-                <Footer />
-            </AuthProvider>
+            <Skip />
+            {children}
+            <Footer />
         </>
     )
 }

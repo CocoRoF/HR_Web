@@ -10,11 +10,12 @@ export const userInfoAuthorization = () => {
   useEffect(() => {
     const fetchAuth = async () => {
       if (cookies.authTokens) {
+        console.log(cookies.authTokens)
         let status;
         try {
-          const response = await axiosInstance.get('/test/');
+          const response = await axiosInstance.post('/test/');
           status = response.status;
-
+          console.log(status)
         } 
         catch (error) {
           clearUserInfo();

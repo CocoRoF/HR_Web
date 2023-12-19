@@ -1,33 +1,34 @@
+"use client";
+
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import dayjs from "dayjs";
 import { useContext } from "react";
 import AuthContext from "@/context/AuthContext";
 
-const useAxios = () => {
-    const { authTokens, setUser, setAuthTokens } = useContext(AuthContext);
+export const useAxios = () => {
+    const { authTokens, axiosHeader, setAxiosHeader, setUser, setAuthTokens, setCookie } = useContext(AuthContext);
 
     const axiosInstance = axios.create({
-        baseURL: "http://localhost/",
-        headers: { Authorization: `Bearer ${authTokens?.access}` } 
-    }); // 중요! Bearer 인증 방식을 알려주기 위해 'Bearer Token'형식으로 보내줘야합니다.
+        baseURL: "http://localhost:8080/api/account",
+        headers: { Authorization: axiosHeader } 
+    });
 
     axiosInstance.interceptors.request.use(async req => {
-        const cookieToken = cookies.authTokens
         const user = jwtDecode(authTokens.access);
-        const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1; // 토큰만료 상태 체크
+        const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
         console.log("Axios Get Requset")
 
-        if (!isExpired) return req; // 만료 안되면 access토큰 사용
+        if (!isExpired) return req;
 
-        const response = await axios.post('http://localhost:8080/token/refresh/', {
+        const response = await axios.post('http://localhost:8080/api/account/token/refresh/', {
             refresh: authTokens.refresh
-        }); // 만료 되었을 경우 refresh토큰을 사용해서 access 토큰 재발급
+        }); 
 
-        localStorage.setItem("authTokens", JSON.stringify(response.data));
-
+        setCookie('authTokens', response.data, {path: '/', expires: new Date(Date.now() + (30 * 60 * 1000))});
         setAuthTokens(response.data);
         setUser(jwtDecode(response.data.access));
+        setAxiosHeader(`Bearer ${response.data.access}`);
 
         req.headers.Authorization = `Bearer ${response.data.access}`;
         return req;
